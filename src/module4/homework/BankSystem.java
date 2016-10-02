@@ -8,7 +8,7 @@ public interface BankSystem {
 
     void transferMoney(User fromUser, User toUser, int amount);
 
-    void paySalary(User user);
+    void paySalary(User user, int amount);
 
 
 }

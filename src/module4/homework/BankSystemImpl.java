@@ -19,14 +19,19 @@ public class BankSystemImpl implements BankSystem {
 
     @Override
     public void fundUser(User user, int amount) {
-        //if limit is ok - do funding - if no do nothing
+        Bank userBank = user.getBank();
 
+        int commission = userBank.getCommission(amount) * 2;
+        if (userBank.getLimitOfFunding() >= commission + amount) {
+            user.setBalance(user.getBalance() - amount);
+        }
     }
 
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
-        //fromUser balance - amount - commission
-        //toUser balance + amount
+        double deltaAmount = fromUser.getBalance() - amount - fromUser.getBank().getCommission(amount);
+        double newUserBalance = toUser.getBalance() + deltaAmount;
+        toUser.setBalance(newUserBalance);
     }
 
     public void setA(int a) {
@@ -34,8 +39,8 @@ public class BankSystemImpl implements BankSystem {
     }
 
     @Override
-    public void paySalary(User user) {
-        //user balance + salary - commision
+    public void paySalary(User user, int amount) {
+        user.setBalance((user.getBalance() + user.getSalary()) - user.getBank().getCommission(amount));
     }
 
     int calculate() {
