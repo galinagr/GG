@@ -1,8 +1,10 @@
 package module3.homework.task1;
 
-public class Bird {
+public class Bird extends Solution {
 
-    void fly() {
-        System.out.println("I am flying");
-    }
+    public static void main(String[] args) {
+        Solution.messagePrint("I am flying");
+        Solution.messagePrint("I am singing");
+        Solution.messagePrint("I am Bird");
+            }
 }

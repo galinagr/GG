@@ -1,5 +1,7 @@
 package module3.homework.task2;
 
-public class Arithmetic {
-
+class Arithmetic {
+    static int add(Integer a, Integer b) {
+        return a.intValue() + b.intValue();
+    }
 }

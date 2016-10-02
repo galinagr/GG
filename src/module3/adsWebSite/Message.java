@@ -14,8 +14,7 @@ public class Message {
             toUser = user;
     }
 
-    private int setDescrSize() {
-        return description.length();
+    private int setDescrSize() {return description.length();
     }
 
     public void setRead(boolean read) {
