@@ -6,10 +6,10 @@ public class User {
     private String name;
     private int monthsOfEmployment;
     private int salary;
-    private String company;
+    private String companyName;
     private Bank bank;
 
-    public Bank getBank() {
+    Bank getBank() {
         return bank;
     }
 
