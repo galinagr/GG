@@ -1,7 +1,6 @@
 package module4.homework;
 
-
-public abstract class Bank {
+abstract class Bank {
     private long id;
     private String bankCurrency;
     private int numberOfEmployeers;
@@ -10,7 +9,7 @@ public abstract class Bank {
     private long totalCapital;
     private long rating;
 
-    public Bank(long id, String bankCurrency, int numberOfEmployeers, double avrSalaryOfEmployee, Currency currency, long totalCapital, long rating) {
+    Bank(long id, String bankCurrency, int numberOfEmployeers, double avrSalaryOfEmployee, Currency currency, long totalCapital, long rating) {
         this.id = id;
         this.bankCurrency = bankCurrency;
         this.numberOfEmployeers = numberOfEmployeers;
@@ -28,11 +27,11 @@ public abstract class Bank {
         return bankCurrency;
     }
 
-    public int getNumberOfEmployeers() {
+    private int getNumberOfEmployeers() {
         return numberOfEmployeers;
     }
 
-    public double getAvrSalaryOfEmployee() {
+    private double getAvrSalaryOfEmployee() {
         return avrSalaryOfEmployee;
     }
 
@@ -68,7 +67,7 @@ public abstract class Bank {
         this.rating = rating;
     }
 
-    public void setCurrency(Currency currency) {
+    void setCurrency(Currency currency) {
         this.currency = currency;
     }
 
@@ -84,7 +83,9 @@ public abstract class Bank {
 
     abstract int getMonthlyRate();
 
-    double moneyPaidMonthlyForSalary();
+    double moneyPaidMonthlyForSalary() {
+        return getNumberOfEmployeers() * getAvrSalaryOfEmployee() * getMonthlyRate();
+    }
 
 
     @Override
@@ -123,9 +124,9 @@ public abstract class Bank {
         return true;
     }
 
-
     @Override
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
 }
+

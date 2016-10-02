@@ -1,6 +1,10 @@
 package module4.homework;
 
-public class ChinaBank extends Bank {
+class ChinaBank extends Bank {
+
+    ChinaBank(long id, String bankCurrency, int numberOfEmployeers, double avrSalaryOfEmployee, Currency currency, long totalCapital, long rating) {
+        super(id, bankCurrency, numberOfEmployeers, avrSalaryOfEmployee, currency, totalCapital, rating);
+    }
 
     @Override
     int getLimitOfWithdrawal() {

@@ -1,7 +1,7 @@
 package module4.homework;
 
 
-public interface BankSystem {
+interface BankSystem {
     void withdrawOfUser(User user, int amount);
 
     void fundUser(User user, int amount);
@@ -9,6 +9,4 @@ public interface BankSystem {
     void transferMoney(User fromUser, User toUser, int amount);
 
     void paySalary(User user, int amount);
-
-
 }

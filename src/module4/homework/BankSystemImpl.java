@@ -1,7 +1,7 @@
 package module4.homework;
 
 
-public class BankSystemImpl implements BankSystem {
+class BankSystemImpl implements BankSystem {
 
     private int a;
 

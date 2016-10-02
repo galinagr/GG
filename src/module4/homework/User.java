@@ -41,19 +41,19 @@ public class User {
         this.monthsOfEmployment = monthsOfEmployment;
     }
 
-    public int getSalary() {
+    int getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    void setSalary(int salary) {
         this.salary = salary;
     }
 
-    public String getCompanyName() {
+    String getCompanyName() {
         return companyName;
     }
 
-    public void setCompanyName(String companyName) {
+    void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
 
