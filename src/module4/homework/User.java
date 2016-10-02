@@ -2,6 +2,11 @@ package module4.homework;
 
 public class User {
     private double balance;
+    private long id;
+    private String name;
+    private int monthsOfEmployment;
+    private int salary;
+    private String company;
     private Bank bank;
 
     public Bank getBank() {
@@ -28,3 +33,5 @@ public class User {
                 '}';
     }
 }
+//package Module4.homework;
+//

@@ -1,13 +1,40 @@
 package module4.homework;
 
-public class ChinaBank  extends Bank {
-    @Override
-    int getCommission(int summ) {
-        return 0;
-    }
+public class ChinaBank extends Bank {
 
     @Override
     int getLimitOfWithdrawal() {
-        return 0;
+        int limit;
+        if (getCurrency() == Currency.USD) limit = 100;
+        else limit = 150;
+        return limit;
+    }
+
+    @Override
+    int getCommission(int summ) {
+        int commission;
+        if (getCurrency() == Currency.USD) {
+            if (summ <= 1000) commission = 3;
+            else commission = 5;
+        } else {
+            if (summ <= 1000) commission = 10;
+            else commission = 11;
+        }
+        return commission;
+    }
+
+    int getLimitOfFunding() {
+        int limit;
+        if (getCurrency() == Currency.EUR) limit = 5000;
+        else limit = 10000;
+        return limit;
+    }
+
+    @Override
+    int getMonthlyRate() {
+        int monthlyRate;
+        if (getCurrency() == Currency.USD) monthlyRate = 1;
+        else monthlyRate = 0;
+        return monthlyRate;
     }
 }

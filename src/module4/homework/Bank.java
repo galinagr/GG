@@ -1,15 +1,78 @@
 package module4.homework;
 
+
 public abstract class Bank {
     private long id;
+    private String bankCurrency;
+    private int numberOfEmployeers;
+    private double avrSalaryOfEmployee;
     private Currency currency;
-    private int totalCapital;
-    private double rating;
-    private String name;
+    private long totalCapital;
+    private long rating;
 
+    public Bank(long id, String bankCurrency, int numberOfEmployeers, double avrSalaryOfEmployee, Currency currency, long totalCapital, long rating) {
+        this.id = id;
+        this.bankCurrency = bankCurrency;
+        this.numberOfEmployeers = numberOfEmployeers;
+        this.avrSalaryOfEmployee = avrSalaryOfEmployee;
+        this.currency = currency;
+        this.totalCapital = totalCapital;
+        this.rating = rating;
+    }
 
+    public long getId() {
+        return id;
+    }
 
-    public Currency getCurrency() {
+    public String getBankCurrency() {
+        return bankCurrency;
+    }
+
+    public int getNumberOfEmployeers() {
+        return numberOfEmployeers;
+    }
+
+    public double getAvrSalaryOfEmployee() {
+        return avrSalaryOfEmployee;
+    }
+
+    public long getTotalCapital() {
+        return totalCapital;
+    }
+
+    public long getRating() {
+        return rating;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setBankCurrency(String bankCurrency) {
+        this.bankCurrency = bankCurrency;
+    }
+
+    public void setNumberOfEmployeers(int numberOfEmployeers) {
+        this.numberOfEmployeers = numberOfEmployeers;
+    }
+
+    public void setAvrSalaryOfEmployee(double avrSalaryOfEmployee) {
+        this.avrSalaryOfEmployee = avrSalaryOfEmployee;
+    }
+
+    public void setTotalCapital(long totalCapital) {
+        this.totalCapital = totalCapital;
+    }
+
+    public void setRating(long rating) {
+        this.rating = rating;
+    }
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
+
+    Currency getCurrency() {
         return currency;
     }
 
@@ -17,9 +80,12 @@ public abstract class Bank {
 
     abstract int getLimitOfWithdrawal();
 
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
-    }
+    abstract int getLimitOfFunding();
+
+    abstract int getMonthlyRate();
+
+    double moneyPaidMonthlyForSalary();
+
 
     @Override
     public String toString() {
@@ -52,15 +118,11 @@ public abstract class Bank {
         if (id != bank.id) return false;
         if (totalCapital != bank.totalCapital) return false;
         if (Double.compare(bank.rating, rating) != 0) return false;
-        if (currency != bank.currency) return false;
-        return name != null ? name.equals(bank.name) : bank.name == null;
-
-
-
-
-
-
+        //  if (currency != bank.currency) return false;
+        //  return name != null ? name.equals(bank.name) : bank.name == null;
+        return true;
     }
+
 
     @Override
     public int hashCode() {
