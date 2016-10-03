@@ -30,12 +30,16 @@ class Room {
             if (id != room.id) return false;
         }*/
 
-        if(price != 0) {
+        if (price != 0) {
             if (price != room.price) return false;
         }
 
-        if(cityName != null) {
+        if (cityName != null) {
             if (!cityName.equals(room.cityName)) return false;
+        }
+
+        if (persons != 0) {
+            if (persons != room.persons) return false;
         }
 
         //null.methods - as a result nullPointerException
@@ -48,6 +52,7 @@ class Room {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + price;
         result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
+        result = 31 * result + persons;
         return result;
     }
 
@@ -55,25 +60,45 @@ class Room {
         this.id = id;
     }
 
-    public long getId() {  return id;  }
+    public long getId() {
+        return id;
+    }
 
-    public String getCityName() {   return cityName;  }
+    public String getCityName() {
+        return cityName;
+    }
 
-    public void setCityName(String cityName) { this.cityName = cityName;    }
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
 
-    public int getPersons() {    return persons;  }
+    public int getPersons() {
+        return persons;
+    }
 
-    public void setPersons(int persons) {   this.persons = persons;  }
+    public void setPersons(int persons) {
+        this.persons = persons;
+    }
 
-    public Date getDateAvailableFrom() {    return dateAvailableFrom;  }
+    public Date getDateAvailableFrom() {
+        return dateAvailableFrom;
+    }
 
-    public void setDateAvailableFrom(Date dateAvailableFrom) {  this.dateAvailableFrom = dateAvailableFrom;  }
+    public void setDateAvailableFrom(Date dateAvailableFrom) {
+        this.dateAvailableFrom = dateAvailableFrom;
+    }
 
-    public String getHotelName() {    return hotelName;  }
+    public String getHotelName() {
+        return hotelName;
+    }
 
-    public void setHotelName(String hotelName) {    this.hotelName = hotelName; }
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
+    }
 
-    public int getPrice() {    return price;   }
+    public int getPrice() {
+        return price;
+    }
 
     public void setPrice(int price) {
         this.price = price;
