@@ -2,14 +2,21 @@ package module5.HW;
 
 import java.util.Date;
 
-public class Room {
+class Room {
     private long id;
     private int price;
-    private String city;
+    private String cityName;
+    private int persons;
+    private Date dateAvailableFrom;
+    private String hotelName;
 
-    public Room(long id, int price) {
+    Room(long id, int price, String cityName, int persons, Date dateAvailableFrom, String hotelName) {
         this.id = id;
         this.price = price;
+        this.cityName = cityName;
+        this.persons = persons;
+        this.dateAvailableFrom = dateAvailableFrom;
+        this.hotelName = hotelName;
     }
 
     @Override
@@ -27,8 +34,8 @@ public class Room {
             if (price != room.price) return false;
         }
 
-        if(city != null) {
-            if (!city.equals(room.city)) return false;
+        if(cityName != null) {
+            if (!cityName.equals(room.cityName)) return false;
         }
 
         //null.methods - as a result nullPointerException
@@ -40,7 +47,7 @@ public class Room {
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + price;
-        result = 31 * result + (city != null ? city.hashCode() : 0);
+        result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
         return result;
     }
 
@@ -48,10 +55,25 @@ public class Room {
         this.id = id;
     }
 
+    public long getId() {  return id;  }
 
-    public int getPrice() {
-        return price;
-    }
+    public String getCityName() {   return cityName;  }
+
+    public void setCityName(String cityName) { this.cityName = cityName;    }
+
+    public int getPersons() {    return persons;  }
+
+    public void setPersons(int persons) {   this.persons = persons;  }
+
+    public Date getDateAvailableFrom() {    return dateAvailableFrom;  }
+
+    public void setDateAvailableFrom(Date dateAvailableFrom) {  this.dateAvailableFrom = dateAvailableFrom;  }
+
+    public String getHotelName() {    return hotelName;  }
+
+    public void setHotelName(String hotelName) {    this.hotelName = hotelName; }
+
+    public int getPrice() {    return price;   }
 
     public void setPrice(int price) {
         this.price = price;
