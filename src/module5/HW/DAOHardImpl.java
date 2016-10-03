@@ -5,6 +5,12 @@ public class DAOHardImpl implements DAO {
 
     @Override
     public Room save(Room room) {
+        room.setId(101);
+        room.setPrice(600);
+        room.setPersons(2);
+        room.setCityName("Minsk");
+        room.setHotelName("HolidayInn");
+        System.out.println("Room updated details:" + room.getId() + room.getPrice() + room.getPersons() + room.getCityName() + room.getHotelName());
         return null;
     }
 
@@ -15,9 +21,12 @@ public class DAOHardImpl implements DAO {
 
     @Override
     public Room update(Room room) {
-        //Rooms - id = 101, price = 400, persons = 2, city = Kiev, hotel = HolidayInn - saved in DB
-
-        //id = 101, price = 600, persons = 2, city = Minks, hotel = HolidayInn - saved in DB
+        room.setId(101);
+        room.setPrice(400);
+        room.setPersons(2);
+        room.setCityName("Kyiv");
+        room.setHotelName("HolidayInn");
+        System.out.println("Room updated details:" + room.getId() + room.getPrice() + room.getPersons() + room.getCityName() + room.getHotelName());
         return null;
     }
 
