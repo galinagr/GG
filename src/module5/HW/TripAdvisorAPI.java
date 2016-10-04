@@ -22,17 +22,10 @@ public class TripAdvisorAPI implements API {
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
 
-
-        //check equals
-
-
-        //check hotel
-
-
-        //logic - implementations
-
-
-        return null;
+        for (int i=0; i<5; i++) {
+            if (rooms[i].getPrice() == price && rooms[i].getPersons() == persons && rooms[i].getCityName().equals(city) && rooms[i].getHotelName().equals(hotel))
+                return new Room[0];
+        }return null;
     }
 
     @Override
