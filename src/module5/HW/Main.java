@@ -9,7 +9,7 @@ public class Main {
         controller.requestRooms(280, 10, "London", "Test");
 
         controller.check(new BookingComAPI(), new GoogleAPI());
-        controller.check(new BookingComAPI(), new GoogleAPI());
-        controller.check(new BookingComAPI(), new GoogleAPI());
+        controller.check(new GoogleAPI(), new TripAdvisorAPI());
+        controller.check(new BookingComAPI(), new TripAdvisorAPI());
     }
 }
