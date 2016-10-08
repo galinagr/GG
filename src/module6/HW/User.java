@@ -94,4 +94,15 @@ public class User {
         result = 31 * result + balances;
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", salary=" + salary +
+                ", balances=" + balances +
+                '}';
+    }
 }
