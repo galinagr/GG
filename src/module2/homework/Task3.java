@@ -1,5 +1,7 @@
 package module2.homework;
 
+import module6.HW.ArrayUtils;
+
 public class Task3 {
 
     public static void main(String[] args) {
@@ -8,6 +10,16 @@ public class Task3 {
         for (int i = 0; i < balances.length - 1; i++) {
             balancesSumPlusNames(balances, names);
         }
+        int[] dataOfArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, -10};
+        ArrayUtils.reverse(dataOfArray);
+        ArrayUtils.findEvenElements(dataOfArray);
+        ArrayUtils.max(dataOfArray);
+        ArrayUtils.min(dataOfArray);
+        ArrayUtils.modulus(dataOfArray);
+        ArrayUtils.multi(dataOfArray);
+        ArrayUtils.secondLargest(dataOfArray);
+        ArrayUtils.maxPositive(dataOfArray);
+
     }
 
     /**
