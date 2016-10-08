@@ -10,10 +10,11 @@ class UserUtil {
         System.arraycopy(users, 0, users1, 0, users.length);
         for (int i = 0; i < users.length; i++) {
             for (int j = i + 1; j < users.length; j++) {
-                if (users[i].equals(users1[j])) {
+                if (!users[i].equals(users1[j])) {
                     count++;
-                    System.out.println("The array has " + count + " unique users");
+                    System.out.println(users[i] + "is a unique user");
                 }
+                System.out.println("The array has " + count + "unique users");
             }
         }
         return users;
@@ -33,8 +34,8 @@ class UserUtil {
 
     final User[] paySalaryToUsers(User[] users) {
         for (User user : users) {
-            int salary = user.getSalary();
-            System.out.println("salary is" + salary);
+            int newBalance = user.getBalances()+user.getSalary();
+            System.out.println("Salary is " + user.getSalary()+ "New balance is" + newBalance);
         }
         return users;
     }
