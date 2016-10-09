@@ -1,7 +1,5 @@
 package module7.module7.HW;
 
-import module4.homework.Currency;
-
 public class Order {
     private long id;
     private int price;
