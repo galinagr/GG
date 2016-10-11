@@ -53,7 +53,7 @@ public class Order {
         this.currency = currency;
     }
 
-    public String getItemName() {
+    String getItemName() {
         return itemName;
     }
 
@@ -61,7 +61,7 @@ public class Order {
         this.itemName = itemName;
     }
 
-    public String getShopIdentificator() {
+    String getShopIdentificator() {
         return shopIdentificator;
     }
 
@@ -75,5 +75,36 @@ public class Order {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    int compareTo(Order o) {
+        return o.getUser().getCity().compareTo(this.user.getCity());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Order order = (Order) o;
+
+        if (id != order.id) return false;
+        if (price != order.price) return false;
+        if (currency != order.currency) return false;
+        if (!itemName.equals(order.itemName)) return false;
+        if (!shopIdentificator.equals(order.shopIdentificator)) return false;
+        return user.equals(order.user);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + price;
+        result = 31 * result + currency.hashCode();
+        result = 31 * result + itemName.hashCode();
+        result = 31 * result + shopIdentificator.hashCode();
+        result = 31 * result + user.hashCode();
+        return result;
     }
 }
