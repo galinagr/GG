@@ -3,6 +3,7 @@ package module7.module7.HW;
 import java.util.Comparator;
 
 class Comparators {
+    static int i;
     Comparator<Order> priceDecreased = new Comparator<Order>() {
         @Override
         public int compare(Order o1, Order o2) {
@@ -37,4 +38,16 @@ class Comparators {
             return rezult;
         }
     };
+    Comparator<Integer> treesetOrders = new Comparator<Integer>() {
+        @Override
+        public int compare(Integer o1, Integer o2) {
+            System.out.println("Price:  " + o1.compareTo(o2));
+            i = o1.compareTo(o2);
+            if (i == -1) System.out.println("Resulted max price: " + o2 );
+            return i;
+
+        }
+    };
+
+
 }
