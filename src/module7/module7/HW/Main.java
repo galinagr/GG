@@ -2,6 +2,7 @@ package module7.module7.HW;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -31,6 +32,7 @@ public class Main {
         orders.add(new Order(115, 188886, Currency.USD, "Note1", "Shop1", users.get(7)));
         orders.add(new Order(119, 30, Currency.USD, "Note2", "Shop1", users.get(8)));
         orders.add(new Order(115, 16, Currency.USD, "Note1", "Shop1", users.get(9)));
+
 
         System.out.println("new array:" + orders);
 
@@ -90,9 +92,9 @@ public class Main {
         middleDataListEight.addAll(orders);
         for (int j = 0; j < middleDataListEight.size(); j++) {
 
-            String city = middleDataListEight.get(j).getUser().getCity();
-            middleDataListNine.addAll(middleDataListEight.subList(j, j+1));
-            for (int i = j+1; i < middleDataListEight.size(); i++) {
+            java.lang.String city = middleDataListEight.get(j).getUser().getCity();
+            middleDataListNine.addAll(middleDataListEight.subList(j, j + 1));
+            for (int i = j + 1; i < middleDataListEight.size(); i++) {
 
                 if (city.equals(middleDataListEight.get(i).getUser().getCity())) {
                     middleDataListNine.addAll(middleDataListEight.subList(i, i + 1));
@@ -107,6 +109,29 @@ public class Main {
             middleDataListNine.clear();
 
         }
+/**
+ * the task 7.5
+ */
+        List<Integer> ordersIntLinkedList = new LinkedList<>();
+        List<Integer> ordersIntList = new ArrayList<>();
+        List<String> ordersStrLinkedList = new LinkedList<>();
+        List<String> ordersStrList = new ArrayList<>();
+
+        System.out.println("LinkedList Integer");
+        Time_methods.timeCalculation_List_Int(1000, ordersIntLinkedList);
+        Time_methods.timeCalculation_List_Int(10000, ordersIntLinkedList);
+
+        System.out.println("List Integer");
+        Time_methods.timeCalculation_List_Int(1000, ordersIntList);
+        Time_methods.timeCalculation_List_Int(10000, ordersIntList);
+
+        System.out.println("LinkedList String");
+        Time_methods.timeCalculation_List_String(1000, ordersStrLinkedList);
+        Time_methods.timeCalculation_List_String(10000, ordersStrLinkedList);
+
+        System.out.println("List String");
+        Time_methods.timeCalculation_List_String(1000, ordersStrList);
+        Time_methods.timeCalculation_List_String(10000, ordersStrList);
     }
 }
 
