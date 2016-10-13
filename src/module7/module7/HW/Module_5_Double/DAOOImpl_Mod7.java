@@ -1,8 +1,6 @@
 package module7.module7.HW.Module_5_Double;
 
-import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Date;
 
 class DAOOImpl_Mod7 implements DAO_Mod7 {
     @Override
@@ -28,7 +26,7 @@ class DAOOImpl_Mod7 implements DAO_Mod7 {
 
     @Override
     public module7.module7.HW.Module_5_Double.Room findById(long id) {
-        Room room = new Room(1002, 0, "Kyiv", 2, Date.from(Instant.parse("12-Apr-2016")), "Avrora");
+        Room room = new Room(1002, 0, "Kyiv", 2, "2011-12-03", "Avrora");
         System.out.println(room.toString() + room.getId() + " is found");
         return null;
     }

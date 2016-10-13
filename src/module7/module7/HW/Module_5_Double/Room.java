@@ -1,22 +1,32 @@
 package module7.module7.HW.Module_5_Double;
 
-import java.util.Date;
-
 public class Room {
     private long id;
     private int price;
     private String cityName;
     private int persons;
-    private Date dateAvailableFrom;
+    private String dateAvailableFrom;
     private String hotelName;
 
-    Room(long id, int price, String cityName, int persons, Date dateAvailableFrom, String hotelName) {
+    Room(long id, int price, String cityName, int persons, String dateAvailableFrom, String hotelName) {
         this.id = id;
         this.price = price;
         this.cityName = cityName;
         this.persons = persons;
         this.dateAvailableFrom = dateAvailableFrom;
         this.hotelName = hotelName;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", price=" + price +
+                ", cityName='" + cityName + '\'' +
+                ", persons=" + persons +
+                ", dateAvailableFrom='" + dateAvailableFrom + '\'' +
+                ", hotelName='" + hotelName + '\'' +
+                '}';
     }
 
     @Override
@@ -80,11 +90,11 @@ public class Room {
         this.persons = persons;
     }
 
-    public Date getDateAvailableFrom() {
+    public String getDateAvailableFrom() {
         return dateAvailableFrom;
     }
 
-    public void setDateAvailableFrom(Date dateAvailableFrom) {
+    public void setDateAvailableFrom(String dateAvailableFrom) {
         this.dateAvailableFrom = dateAvailableFrom;
     }
 
