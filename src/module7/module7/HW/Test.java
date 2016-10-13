@@ -51,11 +51,12 @@ public class Test {
 //
 //        ЗАДАНИЕ 3
 //
-//        Create Main class where you create 10 Orders with 10 Users and put it to the TreeSet. You should create 8 unique and two duplicated Orders
+//      Create Main class where you create 10 Orders with 10 Users and put it to the TreeSet.
+// You should create 8 unique and two duplicated Orders
 //
-//        - check if set contain Order where User’s lastName is - “Petrov”
-//        - print Order with largest price using only one set method - get
-//        - delete orders where currency is USD using Iterator
+//- check if set contain Order where User’s lastName is - “Petrov”
+ //       - print Order with largest price using only one set method - get
+ //       - delete orders where currency is USD using Iterator
 //
 //        ЗАДАНИЕ 4
 //

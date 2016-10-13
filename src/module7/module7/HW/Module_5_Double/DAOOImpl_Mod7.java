@@ -1,10 +1,10 @@
-package module5.HW;
+package module7.module7.HW.Module_5_Double;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-class DAOOImpl implements module5.HW.DAO {
+class DAOOImpl_Mod7 implements DAO_Mod7 {
     @Override
     public Room save(Room room) {
         System.out.println(room.toString() + "saved");
@@ -27,14 +27,14 @@ class DAOOImpl implements module5.HW.DAO {
     }
 
     @Override
-    public Room findById(long id) {
+    public module7.module7.HW.Module_5_Double.Room findById(long id) {
         Room room = new Room(1002, 0, "Kyiv", 2, Date.from(Instant.parse("12-Apr-2016")), "Avrora");
         System.out.println(room.toString() + room.getId() + " is found");
         return null;
     }
 
     @Override
-    public Room[] getAll() {
-        return new Room[0];
+    public ArrayList<Room> getAll() {
+        return new ArrayList<>();
     }
 }
