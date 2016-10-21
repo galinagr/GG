@@ -23,7 +23,7 @@ class UserDAO extends AbstractDAOImpl {
         this.name = name;
     }
 
-    public UserDAO(long id, String name) {
+    UserDAO(long id, String name) {
         this.id = id;
         this.name = name;
     }
