@@ -13,6 +13,7 @@ package module9.HW;
 //TODO:        - you can’t use loops
 
 import java.util.*;
+import java.util.function.Predicate;
 
 //TODO:         Put every subtask to a separate method. Create Main class and test every method with test data.
 public class Main {
@@ -73,24 +74,56 @@ public class Main {
 //        Collections.sort(orders, (o1, o2) -> o1.getUserJ8().getCity().compareTo(o2.getUserJ8().getCity()));
         System.out.println("Sorted by User's city: " + orders);
 
+
+
+        /**
+         * Check if set contain Order where User’s lastName is - “Pavlov”
+         */
+        List<Order_J8> orders1 = orders;
+        orders1.stream()
+                .filter(isLastNameAsExpected())
+                .forEach(System.out::println);
+        /**
+         * Delete all elements with currency "USD"
+         */
+        List<Order_J8> orders2 = orders;
+        orders2.stream()
+                .filter(isCurrencyUSd())
+                .forEach(System.out::println);
+
         /**
          * Separated list for as many lists as many unique cities are in User
          */
 
+        List<Order_J8> orders3 = orders;
 
-        /**
-         * Check if set contain Order where User’s lastName is - “Petrov”
-         */
-        Set<Order_J8> setOrders = new TreeSet<Order_J8>();
-        setOrders.stream()
-                .anyMatch((s) -> s.getUserJ8().getLastName().contains("Petrov"));
+        Set<Order_J8> set = new HashSet<>(orders3);
+        //Set<Order> set = new TreeSet<>(orders);
+        //int count = set.size();
 
-        orders.stream()
-                .anyMatch((s) -> s.getCurrencyJ8().equals("USD"));
-        
+        List<List<Order_J8>> resListGeneral = new ArrayList<>();
+        for (Order_J8 order : set) {
+            List<Order_J8> resList = new ArrayList<>();
+            int count = 0;
+            for (Order_J8 listOrder : orders) {
+                if (order.getUserJ8().getCity().equals(listOrder.getUserJ8().getCity())) {
+                    resList.add(listOrder);
+                    count++;
+                }
+            }
+            resListGeneral.add(resList);
+            System.out.println("List with city   " + order.getUserJ8().getCity() + "consists of" + count + " items");
+        }
+        System.out.println("RESULTED LIST:  " + resListGeneral.toString());
 
 
+    }
 
+    private static Predicate<? super Order_J8> isLastNameAsExpected() {
+        return p -> p.getUserJ8().getLastName().equals("Pavlov");
+    }
 
+    private static Predicate<? super Order_J8> isCurrencyUSd() {
+        return p -> !p.getCurrencyJ8().toString().equalsIgnoreCase("USD");
     }
 }
