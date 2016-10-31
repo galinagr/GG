@@ -25,12 +25,23 @@ public class Main extends Throwable {
         try {
             Calendar cal = Calendar.getInstance();
             String month = new SimpleDateFormat("LLL").format(cal.getTime());
-            System.out.println(month);
+            System.err.println(month);
             new TaskTenTwo(month);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        //task 10.3
 
+        try {
+            TaskTenTwo taskTenTwo1 = new TaskTenTwo(null);
+            check(null);
+        } catch (NullPointerException e) {
 
+            System.err.println("Many mistakes!!!");
+        }
+    }
+    public static void check(TaskTenTwo message){
+        TaskTenTwo b = message;
+        System.out.println("checking  is ok +++ " + b.toString() );
     }
 }
