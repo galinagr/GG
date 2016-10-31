@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Main extends Throwable {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyExceptions {
         String argumentOne = "One";
         String argumentTwo = "TwoTwo";
         String[] a = {argumentOne, argumentTwo};
@@ -39,6 +39,8 @@ public class Main extends Throwable {
 
             System.err.println("Many mistakes!!!");
         }
+        TaskTenFour.f();
+
     }
     public static void check(TaskTenTwo message){
         TaskTenTwo b = message;
