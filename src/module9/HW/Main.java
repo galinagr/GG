@@ -14,6 +14,7 @@ package module9.HW;
 
 import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 //TODO:         Put every subtask to a separate method. Create Main class and test every method with test data.
 public class Main {
@@ -90,7 +91,14 @@ public class Main {
         orders2.stream()
                 .filter(isCurrencyUSd())
                 .forEach(System.out::println);
+        /**
+         * To choose all the data without currency USD
+         */
 
+        List<Order_J8> order5 = orders;
+        List<Order_J8> newlist = order5.stream().filter(n -> !n.getCurrencyJ8().toString().equals("USD")).collect(Collectors.toList());
+        System.out.println("Old list with USD: " + order5.toString());
+        System.out.println("New list WITHOUT USD is: " + newlist.toString());
         /**
          * Separated list for as many lists as many unique cities are in User
          */
@@ -115,8 +123,21 @@ public class Main {
             System.out.println("List with city   " + order.getUserJ8().getCity() + "consists of" + count + " items");
         }
         System.out.println("RESULTED LIST:  " + resListGeneral.toString());
+         deletingPriceLess(orders, 1500);
 
+    }
 
+    /**
+    To delete all the elements with price less than...
+     */
+    private static void deletingPriceLess(List<Order_J8> workingList, int level) {
+        //  - delete items where price less than 1500
+        int startingSize = workingList.size();
+        workingList.removeIf(n -> n.getPrice() < level);
+        int sizeAfterDeleting = workingList.size();
+        System.out.println("***Deleting items where price less than " + level + " ***");
+        System.out.println("Deleted " + (startingSize - sizeAfterDeleting) + " element(s)");
+        workingList.forEach(System.out::println);
     }
 
     private static Predicate<? super Order_J8> isLastNameAsExpected() {
