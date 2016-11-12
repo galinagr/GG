@@ -25,7 +25,7 @@ public class Task1 {
  *
  * PrintWriter writer = new PrintWriter(pathFile);
    writer.print(StringUtils.EMPTY);
- 
+
  we could ADD new values below the old values
  */
             PrintWriter writer = new PrintWriter(pathFile);
