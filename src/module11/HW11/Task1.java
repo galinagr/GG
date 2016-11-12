@@ -20,7 +20,14 @@ public class Task1 {
                 var = bufferedReader.readLine();
             }
             String var1 = sb.toString().replace(" ", "!!!");
-
+/**
+ * Deleting  the following 2 lines
+ *
+ * PrintWriter writer = new PrintWriter(pathFile);
+   writer.print(StringUtils.EMPTY);
+ 
+ we could ADD new values below the old values
+ */
             PrintWriter writer = new PrintWriter(pathFile);
             writer.print(StringUtils.EMPTY);
             bw.write(var1);
