@@ -16,14 +16,14 @@ public class Task3 {
         replValues(newMap, path);
     }
 
-    private static Map contentFile(Map<String, String> map) {
+    public static Map contentFile(Map<String, String> map) {
         map.put("One", "222");
         map.put("Two", "John");
         map.put("Three", "111");
         return map;
     }
 
-    private static void writeToFile(String path, Map map) throws IOException {
+    public static void writeToFile(String path, Map map) throws IOException {
         StringBuilder sb = new StringBuilder();
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
             for (Object o : map.entrySet()) {
@@ -47,7 +47,7 @@ public class Task3 {
         }
     }
 
-    private static void replValues(Map<String, String> map, String path) throws IOException {
+    public static void replValues(Map<String, String> map, String path) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(path));
         try {
 
@@ -75,7 +75,7 @@ public class Task3 {
         }
     }
 
-    private static void createFile(String path, boolean flag) throws IOException {
+    public static void createFile(String path, boolean flag) throws IOException {
 
         File myFile = new File(path);
         FileOutputStream fooStream = null;
